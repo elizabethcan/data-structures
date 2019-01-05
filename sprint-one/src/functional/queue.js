@@ -11,8 +11,11 @@ var Queue = function() {
   };
 
   someInstance.dequeue = function() {
-    // want to remove the element that has been in the queue the longest i.e. the one that was added first
-    var dequeued = storage[Object.keys(storage).length - 1];
+    var dequeued = storage[0];
+    delete storage[0];
+    for (var i = 0; i < Object.keys(storage).length; i++) {
+      storage[i] = storage[i + 1];
+    }
     delete storage[Object.keys(storage).length - 1];
     return dequeued;
   };
