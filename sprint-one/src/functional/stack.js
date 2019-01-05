@@ -19,13 +19,21 @@ var Stack = function() {
       while ((storage.size - i) > 1) {
         storage[storage.size - i] = storage[storage.size - i - 1]
         i--;
-      } 
+      }
       // then do base case for object[0] = value
       storage[0] = value;
     }
   };
 
   someInstance.pop = function() {
+    // create a variable assigned to the first value in the object
+    // if size of the object is 0, delete object[0]
+    // for this one we need to work from the 'lowest' key to the highest
+    // otherwise, first reassign object[0] = object[1]
+    // reassign object[1] = object[2]
+    // continue until we get to object[object.size - 1]
+    // delete object[size - 1]
+    // return popped;
   };
 
   someInstance.size = function() {
