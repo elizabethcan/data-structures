@@ -4,7 +4,6 @@ var Stack = function() {
   this.storage = {};
 };
 
-
 Stack.prototype.push = function(value) {
   this.storage[Object.keys(this.storage).length] = value;
 }
